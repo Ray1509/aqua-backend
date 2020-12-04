@@ -18,11 +18,11 @@ module.exports = function (app) {
       },
       costo_consumo: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       costo_alcantarillado: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       costo_multa: {
         type: DataTypes.INTEGER,
@@ -35,15 +35,15 @@ module.exports = function (app) {
       },
       mes_proceso: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       total_pago: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       fecha_pago: {
-        type: DataTypes.DATE,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
       },
     },
     {

@@ -23,12 +23,12 @@ module.exports = function (app) {
         unique: true,
       },
       fecha_pago: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       ultima_lectura: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       codigoMedidor: {
         type: DataTypes.STRING,
