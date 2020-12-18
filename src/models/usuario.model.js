@@ -25,6 +25,11 @@ module.exports = function (app) {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      admin: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
     },
     {
       hooks: {

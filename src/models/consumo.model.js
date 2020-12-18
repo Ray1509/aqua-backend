@@ -11,22 +11,32 @@ module.exports = function (app) {
       lectura_actual: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
+      },
+      lectura_anterior: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0,
       },
       consumo: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       costo_consumo: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       costo_alcantarillado: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       costo_multa: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       estado: {
         type: DataTypes.BOOLEAN,
@@ -40,6 +50,7 @@ module.exports = function (app) {
       total_pago: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       fecha_pago: {
         type: DataTypes.STRING,

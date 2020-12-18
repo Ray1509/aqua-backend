@@ -20,7 +20,6 @@ module.exports = function (app) {
       ci: {
         type: DataTypes.STRING,
         allowNull: true,
-        unique: true,
       },
       fecha_pago: {
         type: DataTypes.STRING,
@@ -29,11 +28,15 @@ module.exports = function (app) {
       ultima_lectura: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
-      codigoMedidor: {
+      codigo_medidor: {
         type: DataTypes.STRING,
         allowNull: true,
-        unique: true,
+      },
+      alcantarillado: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
       },
     },
     {
