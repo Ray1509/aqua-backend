@@ -5,33 +5,20 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get("sequelizeClient");
-  const cliente = sequelizeClient.define(
-    "cliente",
+  const medidor = sequelizeClient.define(
+    "medidor",
     {
-      nombre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       codigo: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
       },
-      ci: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      fecha_pago: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      ultima_lectura: {
+      precio: {
         type: DataTypes.INTEGER,
-        allowNull: true,
         defaultValue: 0,
       },
-      alcantarillado: {
-        type: DataTypes.BOOLEAN,
+      saldo: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
@@ -45,14 +32,13 @@ module.exports = function (app) {
   );
 
   // eslint-disable-next-line no-unused-vars
-  cliente.associate = function (models) {
-    const { zona, consumo, medidor } = models;
-    cliente.belongsTo(zona);
-    cliente.hasMany(consumo);
-    cliente.belongsTo(medidor);
+  medidor.associate = function (models) {
+    const { cliente, pago_medidor } = models;
+    medidor.hasOne(cliente);
+    medidor.hasMany(pago_medidor);
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return cliente;
+  return medidor;
 };

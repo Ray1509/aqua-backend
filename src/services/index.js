@@ -4,6 +4,8 @@ const zona = require("./zona/zona.service.js");
 const consumo = require('./consumo/consumo.service.js');
 const precioConsumo = require('./precio-consumo/precio-consumo.service.js');
 const adicionales = require('./adicionales/adicionales.service.js');
+const medidor = require('./medidor/medidor.service.js');
+const pagoMedidor = require('./pago-medidor/pago-medidor.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(usuario);
@@ -12,4 +14,6 @@ module.exports = function (app) {
   app.configure(consumo);
   app.configure(precioConsumo);
   app.configure(adicionales);
+  app.configure(medidor);
+  app.configure(pagoMedidor);
 };

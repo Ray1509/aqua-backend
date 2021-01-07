@@ -1,8 +1,5 @@
 const { authenticate } = require("@feathersjs/authentication").hooks;
 
-const clienteHook = require("../../hooks/cliente-hook");
-const obtenerMedidor = require("../../hooks/obtener-medidor");
-
 module.exports = {
   before: {
     all: [authenticate("jwt")],
@@ -15,8 +12,8 @@ module.exports = {
   },
 
   after: {
-    all: [clienteHook()],
-    find: [obtenerMedidor()],
+    all: [],
+    find: [],
     get: [],
     create: [],
     update: [],
